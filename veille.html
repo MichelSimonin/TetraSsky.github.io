@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mon Portfolio - Ma Veille Technologique</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Ajout de Tailwind CSS -->
+<link rel="stylesheet" href="./media/css/output.css">
+<link rel="shortcut icon" href="./media/images/iconPF.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+<style>
+    
+    .hamburger-menu {
+        display: none;
+    }
+
+    .menu__box {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.9);
+        top: 50px;
+        right: 0;
+        z-index: 50;
+        transition: max-height 0.3s ease;
+        max-height: 300px;
+    }
+
+    .menu__item {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu-active {
+        display: flex;
+    }
+
+    body {
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+        .hamburger-menu {
+            display: flex;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+    }
+
+    .nav-link {
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .rotate {
+        transform: rotate(90deg);
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-in-down {
+        opacity: 0;
+        animation: fadeInDown 1s ease-in-out forwards;
+    }
+
+    .fade-in-down:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+    .fade-in-down:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+    .fade-in-down:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+    .fade-in-down:nth-child(4) {
+        animation-delay: 0.8s;
+    }
+    .fade-in-down:nth-child(5) {
+        animation-delay: 1s;
+    }
+
+        .zoom-on-hover {
+        transition: transform 0.1s ease-in-out;
+    }
+
+    .zoom-on-hover:hover {
+        transform: scale(1.1);
+    }
+
+    @keyframes rainbow {
+            to {background-position: 200%}
+        }
+
+        .rainbow-hover {
+            background: linear-gradient(90deg in hsl longer hue, red 0 50%) 0/400%;
+            animation: rainbow 6s linear infinite;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="bg-black flex flex-col min-h-screen relative overflow-x-hidden">
+
+    <header class="bg-black z-50 fixed top-0 w-screen p-4 md:p-10 shadow h-auto">
+        <div class="header-container flex items-center justify-between">
+            <a href="index.html" class="flex items-center">
+                <img src="media/images/iconPF.png" alt="Logo" class="w-12 h-12 md:w-24 md:h-24">
+                <h1 class="text-2xl sm:text-3xl md:text-6xl text-white font-bold font-DotGothic16">Mon Portfolio</h1>
+            </a>
+
+            <div class="hamburger-menu" id="menu__toggle">
+                <div class="menu__btn">
+                    <span class="block w-8 h-1 bg-white mb-1"></span>
+                    <span class="block w-8 h-1 bg-white mb-1"></span>
+                    <span class="block w-8 h-1 bg-white"></span>
+                </div>
+            </div>
+
+            <ul class="menu__box">
+                <li class="menu__item"><a href="veille.html" class="text-white font-bold font-DotGothic16">Ma Veille Technologique</a></li>
+                <li class="menu__item"><a href="travaux.html" class="text-white font-bold font-DotGothic16">Mes Travaux en BTSSIO</a></li>
+                <li class="menu__item"><a href="projets.html" class="text-white font-bold font-DotGothic16">Autres Projets</a></li>
+            </ul>
+
+            <nav class="hidden md:flex">
+                <ul class="flex space-x-6">
+                    <li><a href="veille.html" class="nav-link text-white font-bold font-DotGothic16">Ma Veille Technologique</a></li>
+                    <li><a href="travaux.html" class="nav-link text-white font-bold font-DotGothic16">Mes Travaux en BTSSIO</a></li>
+                    <li><a href="projets.html" class="nav-link text-white font-bold font-DotGothic16">Autres Projets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="w-full mt-16 md:mt-32 flex-grow flex justify-center items-center relative py-10 z-20 mx-auto overflow-x-hidden"></div>
+        <main>
+            <section>
+                <article>
+                    <div id="contenu">
+
+                        <div class='h-full flex justify-center items-center font-Roboto p-6'>
+
+                            <div class='bg-black bg-opacity-75 text-white shadow-md rounded-lg p-6'>
+
+                                <h1 class='text-4xl font-bold font-Roboto text-center mb-6'>Qu’est-ce qu’une veille technologique ?</h1>
+                                <p class=' text-center mb-4 italic'>\"C’est une activité qui consiste à se tenir informé sur un secteur d’activité précis de ces nouvelles innovations, il se doit de prévenir, informer et alerter. Cela permet en autre de constituer une base d’informations\"</p>
+
+                                <h1 class='text-4xl font-bold font-Roboto text-center mb-6'>L'apport de l'IA dans la programmation</h1>
+                                <p class='text-center mb-4 font-DotGothic16'>La technologie évoluant à un rythme effréné, il est important de rester informé des dernières avancées pour maintenir sa pertinence et son efficacité professionnelle. Ma veille technologique se concentre sur l'apport des l'intelligences artificielles dans le domaine de la programmation, explorant comment celles-ci transforment non seulement la façon dont nous imaginons, concevons, mais aussi la manière dont nous abordons les problèmes informatiques complexes et plus principalement au niveau du code</p>
+                                <p class='text-center mb-4 font-DotGothic16'>L'intégration de l'IA dans la programmation offre un potentiel révolutionnaire, ouvrant de nouvelles perspectives et possibilités pour les développeurs et ingénieurs logiciels</p>
+                            
+                            </div>
+
+                        </div>
+
+                        <div class='flex flex-wrap justify-center'>
+
+                            <div class='w-full sm:w-1/3 p-6'>
+
+                                <h1 class='bg-black bg-opacity-75 text-white text-center shadow-md rounded-2xl p-6 sm:p-10 text-3xl sm:text-4xl font-bold mb-4'>Section Pull</h1>
+                                <h4 class='text-white text-left rounded-2xl text-3xl sm:text-4xl font-bold mb-4'>Recherches</h4>
+                                <ul class='list-disc list-inside text-left mb-4 text-white text-lg sm:text-2xl'>
+                                    <li><strong>Google Scholar :</strong> Moteur de recherche spécialisé de Google pour l'éducation</li>
+                                </ul>
+                                <h4 class='text-white text-left rounded-2xl text-3xl sm:text-4xl font-bold mb-4'>Sites</h4>
+                                <ul class='list-disc list-inside text-left mb-4 text-white text-lg sm:text-2xl'>
+                                    <li><strong>Microsoft AI Blog :</strong> Le blog de Microsoft sur l'IA, proposant des articles sur les dernières recherches, les innovations et les produits liés à l'IA développés par Microsoft</li>
+                                    <li><strong>Google AI Blog :</strong> Le blog officiel de Google consacré à ses avancées et recherches en intelligence artificielle et d'autres projets open-source</li>
+                                    <li><strong>NVIDIA AI Blog :</strong> Le blog de NVIDIA sur l'IA, couvrant des sujets tels que les GPU pour le deep learning, les algorithmes d'apprentissage profond et les applications de l'IA</li>
+                                    <li><strong>OpenAI Blog :</strong> Le blog officiel d'OpenAI, une organisation de recherche en IA, partageant des articles sur leurs recherches, leurs découvertes et les implications éthiques de l'IA</li>
+                                </ul>
+                                <h4 class='text-white text-left rounded-2xl text-3xl sm:text-4xl font-bold mb-4'>Forums</h4>
+                                <ul class='list-disc list-inside text-left mb-4 text-white text-lg sm:text-2xl'>
+                                    <li><strong>Github :</strong> Majoritairement les projets Communautaires en rapport <a class='text-red-600 underline' href='https://github.com/topics/artificial-intelligence-projects'>l'intelligence artificielle</a></li>
+                                    <li><strong>Reddit :</strong> Communautés telles que : <a class='text-red-600 underline' href='https://www.reddit.com/r/MachineLearning/'>r/MachineLearning</a>, <a class='text-red-600 underline' href='https://www.reddit.com/r/ArtificialInteligence/'>r/ArtificialInteligence</a> & <a class='text-red-600 underline' href='https://www.reddit.com/r/datascience/'>r/DataScience</a></li>
+                                </ul>
+
+                            </div>
+
+                            <div class='w-full sm:w-1/3 p-6'>
+
+                                <h1 class='bg-black bg-opacity-75 text-white text-center shadow-md rounded-2xl p-6 sm:p-10 text-3xl sm:text-4xl font-bold mb-4'>Section Push</h1>
+                                <h4 class='text-white text-left rounded-2xl text-3xl sm:text-4xl font-bold mb-4'>Recherches</h4>
+                                <ul class='list-disc list-inside text-left mb-4 text-white text-lg sm:text-2xl'>
+                                    <li><strong>Twitter (X) :</strong> Des comptes comme : <a class='text-red-600 underline' href='https://x.com/openai?lang=fr'>OpenAI</a>, <a class='text-red-600 underline' href='https://x.com/googleai?lang=fr'>GoogleAI</a>, <a class ='text-red-600 underline' href='https://x.com/MKBHD'>MKBHD</a> (Youtuber Tech Anglophone) & <a class='text-red-600 underline' href='http://x.com/Mrwhosetheboss'>MrWhosTheBoss</a> (Youtuber Tech Anglophone)</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <footer class="p-6 bg-black text-white flex flex-col md:flex-row items-center justify-evenly text-lg z-10 font-DotGothic16">
+        <p class='p-6 text-lg md:text-4xl'>Michel Simonin</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu__toggle');
+            const menuBox = document.querySelector('.menu__box');
+
+            menuToggle.addEventListener('click', function() {
+                menuBox.classList.toggle('menu-active');
+                if (menuBox.style.display === 'flex') {
+                    menuBox.style.display = 'none';
+                } else {
+                    menuBox.style.display = 'flex';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
